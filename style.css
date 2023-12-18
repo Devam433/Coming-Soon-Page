@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Libre+Baskerville&family=Montserrat&family=Ubuntu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+}
+
+header{
+    height: auto;
+    padding: 15px;
+}
+header img{
+    width: 150px;
+}
+
+.container {
+    min-height: 84vh;
+    /*The container's minimum height will be 100vh; basically all the height of the view port*/
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0,100,98%));
+}
+
+.container .left {
+    width: 100%;
+    height: auto;
+    padding: 20px 10px 5px 10px;
+    text-align: center;
+}
+
+.container .right {
+    width: 100%;
+    height: 250px;
+    background-image: url(./images/hero-mobile.jpg);
+    background-size: cover;
+    /*background-size:cover; means the background image will always fit the whole div , you won't be left with any empty spots in your div*/
+
+}
+
+.container .left h1 {
+    color: hsl(0, 36%, 70%);
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 2rem;
+    letter-spacing: .3rem;
+}
+
+.container .left span {
+    color: hsl(0, 6%, 24%);
+    font-weight: 600;
+}
+
+.container .left p {
+    color: hsl(0, 36%, 70%);
+    line-height: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.container .left form {
+    position: relative;
+    margin: 0 auto;/*the top/bottom margin is 0, and the left/right margin is auto, Where auto means that the left and right margins are automatically set by the browser based on the container, to make the element centered.*/
+    height: 40px;
+    width: 100%;
+}
+.container form input{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border-radius: 50px;
+    border: 1px solid hsl(0deg 100% 84.09% / 87%);
+    padding-left: 20px;
+}
+
+.container form input::placeholder{
+    color: hsl(0, 36%, 70%);
+    opacity: .5;
+}
+.container form button{
+    position: absolute;
+    top: 0px;
+    right: 1px;
+    width: 65px;
+    height: 40px;
+    border-radius: 100px;
+    border: 1px solid hsl(0, 36%, 70%);;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    box-shadow: rgb(200 99 99 / 49%) 0px 5px 15px;
+}
+
+.container form button:hover{
+    cursor: pointer;
+    border: 1px solid hsl(0deg 36% 70% / 21%);
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0deg 74% 74% / 60%));
+}
+
+.container .left form .error-icon{
+    position: absolute;
+    right: 71px;
+    top: 11.3px;
+    width: 20px;
+    display: none;
+}
+
+.container .left form p{
+    margin: 0;
+    margin-left: 20.1px;
+    display: none;
+}
+
+footer{
+    margin-top: 100px;
+    background-color: rgba(238, 130, 238, 0.801);
+}
+
+/* Desktop */
+
+/* 
+@media all and (min-width: 550px)and(max-width:749px){
+    
+    .container .right{
+        background-image: url(./images/hero-desktop.jpg);
+        height: 100vh;
+    }
+
+} */
+
+@media (min-width:750px)
+{
+    header{
+        position: absolute;      
+        padding-left: 100px;     
+    }
+    .container{
+        flex-direction: row;
+        background-image: url(./images/bg-pattern-desktop.svg);
+    }
+    .container .right{
+        background-image: url(./images/hero-desktop.jpg);
+        height: 100vh;
+        width: 80%;
+    }
+    .container .left{
+        text-align: left;
+        padding: 0 100px;
+    }
+    .container .left h1{
+        line-height: 4rem;
+        letter-spacing: 0.3rem;
+        font-size: 4rem;
+    }
+}
